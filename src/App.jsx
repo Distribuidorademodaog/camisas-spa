@@ -41,11 +41,17 @@ export default function App() {
         <div>
           <h1 className="text-2xl font-bold mb-4">Haz tu pedido fácil y rápido</h1>
           <p className="mb-2">Selecciona un pack:</p>
-          <div className="space-x-2">
-            {packs.map((n) => (
-              <button key={n} onClick={() => handlePackSelect(n)}>{n} Camisa{n > 1 && 's'}</button>
-            ))}
-          </div>
+          <div className="flex gap-4">
+  {packs.map((n) => (
+    <button
+      key={n}
+      className="border px-4 py-2 rounded-md hover:bg-gray-100 transition font-medium"
+      onClick={() => handlePackSelect(n)}
+    >
+      {n} Camisa{n > 1 && 's'}
+    </button>
+  ))}
+</div>
         </div>
       )}
 
